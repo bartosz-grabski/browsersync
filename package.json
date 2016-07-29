@@ -1,0 +1,15 @@
+{
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-watch": "~0.6.1"
+  },
+  "dependencies": {
+    "grunt-concurrent": "^2.3.0"
+  }
+}
