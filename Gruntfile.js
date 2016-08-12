@@ -6,7 +6,21 @@ module.exports = function(grunt) {
     // Task configuration.
 
     watch: {
+      screenshots: {
+        files : ['screenshots/*.png', 'index.html'],
+        options: {
+          livereload: 1227
+        }
+      }
+    },
 
+    express: {
+        prod: {
+          options: {
+            script : 'server.js',
+            background: false
+          }
+        }
     },
     
     concurrent: {
@@ -20,7 +34,17 @@ module.exports = function(grunt) {
         options: {
           logConcurrentOutput: true
         }
+      },
+      server: {
+        tasks: [
+          'watch',
+          'express'
+        ],
+        options: {
+          logConcurrentOutput: true
+        }
       }
+
     },
 
     browserSync: {
@@ -74,8 +98,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-express-server');
 
   // Default task.
   grunt.registerTask('default', ['concurrent:browsersync']);
+  grunt.registerTask('serve', ['concurrent:server'])
 
 };

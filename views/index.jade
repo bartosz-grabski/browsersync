@@ -1,0 +1,18 @@
+html
+	body
+		style.
+			.container {
+				width: 90%;
+				margin: auto;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			.item {
+				flex-grow: 1;
+			} 
+		div(class="container")
+			each val in sizes
+				div(class="item")
+					p #{val}
+					img(src="#{val}.png")
