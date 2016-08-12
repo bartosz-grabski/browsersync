@@ -93,8 +93,6 @@ module.exports = function(grunt) {
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-concurrent');
@@ -103,5 +101,6 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['concurrent:browsersync']);
   grunt.registerTask('serve', ['concurrent:server'])
+  grunt.registerTask('phantom', [] )
 
 };
